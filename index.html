@@ -9,6 +9,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
     <script defer src="js/main.js"></script>
+    <script defer src="js/animation.js"></script>
     <title>Buddha</title>
 </head>
 
@@ -160,36 +161,6 @@
             </div>
         </div>
     </section>
-    <script>
-        window.onload = load();
-        window.onresize = load;
-        function load() {
-            if (window.innerWidth <= 654) { document.getElementById('navigation').className = 'nav2'; }
-            else { document.getElementById('navigation').className = 'nav1'; }
-        }
-        const menu = document.getElementById('menu').onclick = () => {
-            document.getElementById('nav-menu').classList.toggle('nav-active');
-        }
-        const para = document.querySelectorAll('#paragraph');
-        const btn = document.querySelectorAll(".circle");
-        var current = 0;
-        console.log(para);
-        function clk(e) {
-            btn[current].classList.remove('c-active');
-            para[current].classList.remove('active');
-            current = Number(e.slice(1));
-            para[current].classList.add('active');
-            btn[current].classList.add('c-active');
-
-        }
-        const timmer = setInterval(() => {
-            btn[current].classList.remove('c-active');
-            para[current].classList.remove('active');
-            current = (current + 1) % 4;
-            para[current].classList.add('active');
-            btn[current].classList.add('c-active');
-        }, 10000)
-    </script>
 </body>
 
 </html>
