@@ -1,0 +1,480 @@
+:root {
+  --bgcolor: #1a1514;
+  --color2: #878787;
+  --color3: #e6955c;
+  --color4: #ffffff;
+  --pfontfamily: "DM Sans", sans-serif;
+  --hfontfamily: "Nunito", sans-serif;
+}
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 200;
+}
+
+header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0px 20px;
+}
+
+header .container .logo {
+  width: 60px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+header .container .menu {
+  display: none;
+}
+
+header .container .menu svg {
+  height: 40px;
+  width: 40px;
+  fill: var(--color3);
+  -webkit-transition: fill 0.5s;
+  transition: fill 0.5s;
+}
+
+header .container .nav1 ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+}
+
+header .container .nav1 ul li {
+  padding: 10px 30px;
+  text-align: center;
+}
+
+header .container .nav1 ul li a {
+  position: relative;
+  text-decoration: none;
+  color: var(--color2);
+  font-family: var(--hfontfamily);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+header .container .nav1 ul li a::before {
+  position: absolute;
+  content: "";
+  bottom: -6px;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--color3);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+header .container .nav1 ul li:hover a {
+  color: white;
+}
+
+header .container .nav1 ul li:hover a::before {
+  width: 100%;
+  left: 0%;
+}
+
+header .container .nav2 {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-clip-path: polygon(100% 0, 100% 50px, 50% 100%, 0 100%, 0 0);
+          clip-path: polygon(100% 0, 100% 50px, 50% 100%, 0 100%, 0 0);
+  background-color: var(--color3);
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+header .container .nav2 ul {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: skew(-16deg);
+          transform: skew(-16deg);
+  top: 30%;
+  right: 30%;
+  -webkit-transform: translate(-50% -50%);
+          transform: translate(-50% -50%);
+  left: 30px;
+  z-index: -1;
+  list-style: none;
+}
+
+header .container .nav2 ul li {
+  margin: 0.5rem 0;
+  text-align: right;
+  -webkit-transform: skew(16deg) translateX(-100%);
+          transform: skew(16deg) translateX(-100%);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+header .container .nav2 ul li a {
+  font-family: var(--hfontfamily);
+  font-weight: 600;
+  color: var(--bgcolor);
+  font-size: 30px;
+  text-decoration: none;
+}
+
+header .container .nav2 ul li:nth-child(1) {
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+header .container .nav2 ul li:nth-child(2) {
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+
+header .container .nav2 ul li:nth-child(3) {
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+header .container .nav2 ul li:nth-child(4) {
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
+}
+
+header .nav-active .logo .cls-1 {
+  stroke: var(--bgcolor);
+}
+
+header .nav-active .logo .cls-2 {
+  fill: var(--bgcolor);
+}
+
+header .nav-active .menu svg {
+  fill: var(--bgcolor);
+}
+
+header .nav-active .nav2 {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+header .nav-active .nav2 ul li {
+  opacity: 1;
+  -webkit-transform: skew(16deg) translateX(0%);
+          transform: skew(16deg) translateX(0%);
+}
+
+.main {
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--bgcolor);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .container {
+  --var: 500px;
+  width: 90%;
+  max-width: 1400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: auto;
+}
+
+.main .container .images {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 294.75px;
+          flex: 1 0 294.75px;
+  max-width: var(--var);
+  padding: 0px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .container .images .image1 {
+  position: relative;
+  width: 70%;
+  background-repeat: no-repeat;
+  z-index: 1;
+  padding-top: 20%;
+}
+
+.main .container .images .image2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  -webkit-animation: chakra 20s linear infinite;
+          animation: chakra 20s linear infinite;
+}
+
+.main .container .para {
+  --elementmargin: 30px 0px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 294.75px;
+          flex: 1 0 294.75px;
+  max-width: var(--var);
+  padding: 0px 10px;
+}
+
+.main .container .para .imputcontainer {
+  position: relative;
+}
+
+.main .container .para .imputcontainer ::-webkit-input-placeholder {
+  color: var(--color2);
+}
+
+.main .container .para .imputcontainer :-ms-input-placeholder {
+  color: var(--color2);
+}
+
+.main .container .para .imputcontainer ::-ms-input-placeholder {
+  color: var(--color2);
+}
+
+.main .container .para .imputcontainer ::placeholder {
+  color: var(--color2);
+}
+
+.main .container .para .imputcontainer input {
+  height: 30px;
+  width: 270px;
+  outline: none;
+  background: none;
+  border: 2px solid var(--color3);
+  border-radius: 20px;
+  padding-left: 30px;
+  color: var(--color4);
+}
+
+.main .container .para .imputcontainer svg {
+  position: absolute;
+  top: 4px;
+  left: 10px;
+  width: 15px;
+}
+
+.main .container .para .line {
+  height: 5px;
+  width: 200px;
+  background-color: var(--color3);
+  border-radius: 20px;
+  margin: var(--elementmargin);
+}
+
+.main .container .para h1 {
+  font-family: var(--hfontfamily);
+  color: white;
+  font-size: 40px;
+}
+
+.main .container .para p {
+  display: none;
+  font-family: var(--pfontfamily);
+  color: var(--color2);
+  margin: var(--elementmargin);
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+}
+
+.main .container .para .active {
+  display: block;
+}
+
+.main .container .para .bubble {
+  width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.main .container .para .bubble .circle {
+  background-color: transparent;
+  outline: none;
+  --cwidth: 15px;
+  height: var(--cwidth);
+  width: var(--cwidth);
+  border: 3px solid var(--color3);
+  border-radius: 20px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.main .container .para .bubble .c-active {
+  background-color: var(--color3);
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes chakra {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes chakra {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 654px) {
+  header .container .menu {
+    display: block;
+  }
+  .nav1 {
+    display: none;
+  }
+  .main {
+    height: auto;
+  }
+  .main .container {
+    margin-top: 70px;
+  }
+  .main .container .images {
+    padding: 0px 0px;
+    margin: 30px 0px;
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+  .main .container .para {
+    padding: 20px 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    --elementmargin: 20px 0px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
